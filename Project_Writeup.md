@@ -13,6 +13,9 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+###NOTICE
+I grabbed a couple helper methods from the forums, showing images, normalization
+
 **Data Set Summary**
 	The provided data included a training set, validation set, and test set.  All we had to do was download the files and point to them and pickle did the rest!  We didn't even have to split the training set into two since the validation set was provided which was nice.
 When looking at the distributions of the training and validation sets, they had near identical distributions of traffic signs with the more common signs(speed, stop, yield, no passing, etc) being far more numerous than the other signs by a factor of up to 7* more prevalent.  This might affect the ability of the network to train on these under-represented signs.  I also noticed that some of the images are extremely dark and difficult to see even after normalization.  I didnt try it but I would be curious to see if you were to filter out the dark images if it would negatively or positivily affect the networks ability to train.  Perhaps these images make the network more resilient to image distortion or perhaps they make the network train to give false positives and mismatch probabilites for similar signs.  
