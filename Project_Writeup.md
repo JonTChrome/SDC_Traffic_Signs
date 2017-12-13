@@ -21,7 +21,7 @@ When looking at the distributions of the training and validation sets, they had 
 * The size of the validation set is 34799
 * The size of test set is 12630
 * The shape of a traffic sign image is (32,32, 3)
-* The number of unique classes/labels in the data set is 4
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Exploratory visualization of the dataset.
 
@@ -35,7 +35,7 @@ Bar charts showing how the data is distributed throughout the classes in the tra
 
 #### 1. Normalizing
 
-	I normalized the images to minimize large calculation errors and allow for faster calculations and faster training rate by conditioning the training data.
+I normalized the images to minimize large calculation errors and allow for faster calculations and faster training rate by conditioning the training data.
 I also wanted to double the size of the training and validation set by taking the normalized data and adding a rotated copy of each image.  My thought was that adding rotated images will make the network more robust by taking advantage of the spatial awareness of a CNN.  However I was training on my local machine and I must have run out of memory(Kernel crashed) so I never got to fully test this.
 
 Pictures of the processed images
@@ -86,12 +86,12 @@ I chose the LeNet architecture since it was the one studied so I understood it b
 
 ### Test a Model on New Images
 
-#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Five German Traffic Signs
 
 Here are five German traffic signs that I found on the web:
 
 ![Left](./test_signs/Left.jpeg) ![Speed](./test_signs/Speed.jpeg) ![Stop](./test_signs/Stop.jpg) 
-![Work](./test_signs/Work.jpeg) ![Yield](./test_signs/Yield.jpeg)
+![Work](./test_signs/Work.jpeg) ![Yield](./test_signs/Yield.jpg)
 
 [Left Turn](https://cdn.xl.thumbs.canstockphoto.com/road-sign-turn-left-against-the-blue-sky-stock-photography_csp36280602.jpg)
 [Speed 30](http://c8.alamy.com/comp/G667W0/road-sign-speed-limit-30-kmh-zone-passau-bavaria-germany-G667W0.jpg)
@@ -101,7 +101,7 @@ Here are five German traffic signs that I found on the web:
 
 I chose these images specifically since they looked similar to the images in the training set.  They were images that were centered and took up most of the frame and didnt contain any other objects and were brightly lit.  
 
-The stop sign we not straight on so the classifier might have difficulty recognizing the shape.  The left turn sign was pretty much the same color as its image background, this also might be difficult for the classifier to recognize.
+The stop sign was not straight on so the classifier might have difficulty recognizing the shape.  The left turn sign was pretty much the same color as its image background, this also might be difficult for the classifier to recognize.
 The other three seem to be ideal images for the classifier, there is a watermark over the Yield but that might not matter as the classifier should ignore it
 
 #### 2. Predictions
@@ -124,6 +124,8 @@ The model was 5/5!  This is even better than the test set accuracy of <90%.  Per
 I wrote the code to view the top 5 softmax probabilities and to match them with the sign types.  They were printed out in the following:
 
 ![First](./Writeup_img/Softmax_1.png) ![Second](./Writeup_img/Softmax_2.png)
+
+Really cool to see here that in the Case of the Road work sign, the classifiers thought that it was really close to other similarly shaped signs but was still able to differentiate the contents of the actual sign
 
 Some visualization Bar Graphs
 
